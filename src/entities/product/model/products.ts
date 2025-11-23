@@ -46,7 +46,7 @@ export const products: Product[] = [
     inStock: true,
     modelPath: '/models/lg-tv.glb',
     usdzPath: '/models/lg-tv.usdz',
-    posterPath: '/posters/lg-tv.jpg',
+    posterPath: '/posters/lg-led.png',
     articleNumber: 'OLED55C3RLA',
     specifications: {
       dimensions: '122.8x70.6x2.21',
