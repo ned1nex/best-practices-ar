@@ -1,66 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Container } from '@/shared/ui';
+import { products } from '@/entities/product';
+import { ProductCard } from '@/widgets/product-card';
+import styles from './page.module.css';
+
+export default function CatalogPage() {
   return (
     <div className={styles.page}>
+      <header className={styles.header}>
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className={styles.headerContent}
+          >
+            <div className={styles.logoContainer}>
+              <h1 className={styles.logo}>M.Video</h1>
+              <span className={styles.arBadge}>AR Experience</span>
+            </div>
+            <p className={styles.tagline}>
+              Experience home appliances in your space with augmented reality
+            </p>
+          </motion.div>
+        </Container>
+      </header>
+
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Container>
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className={styles.catalog}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <div className={styles.catalogHeader}>
+              <h2 className={styles.title}>Product Catalog</h2>
+              <p className={styles.subtitle}>
+                Select a product to view in 3D and AR
+              </p>
+            </div>
+
+            <div className={styles.grid}>
+              {products.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.4 + index * 0.1,
+                    duration: 0.5,
+                    ease: 'easeOut',
+                  }}
+                >
+                  <ProductCard product={product} />
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+        </Container>
       </main>
+
+      <footer className={styles.footer}>
+        <Container>
+          <div className={styles.footerContent}>
+            <p>© 2025 M.Video AR Experience</p>
+            <p>Educational Project</p>
+          </div>
+        </Container>
+      </footer>
     </div>
   );
 }
