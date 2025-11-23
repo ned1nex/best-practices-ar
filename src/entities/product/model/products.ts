@@ -8,9 +8,9 @@ export const products: Product[] = [
     category: 'Refrigerators',
     price: 1899,
     inStock: true,
-    modelPath: '/models/fridge.glb',
-    usdzPath: '/models/fridge.usdz',
-    posterPath: '/posters/samsung-fridge-sbs.jpg',
+    modelPath: '/models/samsung-fridge.glb',
+    usdzPath: '/models/samsung-fridge.usdz',
+    posterPath: '/posters/samsung-fridge.png',
     articleNumber: 'RF65A967FB1/WT',
     specifications: {
       dimensions: '91.2x178x71.6',
@@ -28,7 +28,7 @@ export const products: Product[] = [
     inStock: true,
     modelPath: '/models/lg-fridge-two-door.glb',
     usdzPath: '/models/lg-fridge-two-door.usdz',
-    posterPath: '/posters/lg-fridge-two-door.jpg',
+    posterPath: '/posters/lg-fridge.png',
     articleNumber: 'GA-B509SQTL',
     specifications: {
       dimensions: '59.5x190.7x68.6',
