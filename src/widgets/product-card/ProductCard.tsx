@@ -23,14 +23,17 @@ export function ProductCard({ product }: ProductCardProps) {
       >
         <Card ornate hoverable className={styles.card}>
           <div className={styles.imageContainer}>
-            <div className={styles.placeholder}>
-              <span className={styles.brandBadge}>{product.brand}</span>
-              {product.inStock ? (
-                <span className={styles.stockBadge}>In Stock</span>
-              ) : (
-                <span className={`${styles.stockBadge} ${styles.outOfStock}`}>Out of Stock</span>
-              )}
-            </div>
+            <img
+              src={product.posterPath}
+              alt={product.name}
+              className={styles.image}
+            />
+            <span className={styles.brandBadge}>{product.brand}</span>
+            {product.inStock ? (
+              <span className={styles.stockBadge}>In Stock</span>
+            ) : (
+              <span className={`${styles.stockBadge} ${styles.outOfStock}`}>Out of Stock</span>
+            )}
           </div>
 
           <div className={styles.content}>
