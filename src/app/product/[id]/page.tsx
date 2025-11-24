@@ -167,7 +167,7 @@ export default function ProductDetailPage() {
                       </div>
                     )}
                     <div className={styles.specItem}>
-                      <dt>Класс энергопотребления</dt>
+                      <dt>Энергопотребление</dt>
                       <dd>{product.specifications.energyClass}</dd>
                     </div>
                     <div className={styles.specItem}>
