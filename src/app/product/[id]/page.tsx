@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ShoppingCart, Info } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Info, Check, X } from 'lucide-react';
 import { Container, Button, Card } from '@/shared/ui';
 import { getProductById } from '@/entities/product';
 import { formatPrice } from '@/shared/lib';
@@ -28,9 +28,9 @@ export default function ProductDetailPage() {
       <div className={styles.page}>
         <Container>
           <div className={styles.notFound}>
-            <h1>Product Not Found</h1>
+            <h1>Товар не найден</h1>
             <Link href="/">
-              <Button variant="primary">Return to Catalog</Button>
+              <Button variant="primary">Вернуться в каталог</Button>
             </Link>
           </div>
         </Container>
@@ -52,8 +52,8 @@ export default function ProductDetailPage() {
         <Container>
           <div className={styles.headerContent}>
             <Link href="/" className={styles.backLink}>
-              <ArrowLeft size={24} />
-              <span>Back to Catalog</span>
+              <ArrowLeft size={25 } />
+             
             </Link>
             <div className={styles.headerActions}>
               <ShareButton productId={product.id} productName={product.name} />
@@ -65,7 +65,7 @@ export default function ProductDetailPage() {
       <main className={styles.main}>
         <Container>
           <div className={styles.breadcrumbs}>
-            <Link href="/">Catalog</Link>
+            <Link href="/">Каталог</Link>
             <span>/</span>
             <Link href="/">{product.category}</Link>
             <span>/</span>
@@ -108,12 +108,22 @@ export default function ProductDetailPage() {
               <Card ornate className={styles.infoCard}>
                 <div className={styles.brandBadge}>{product.brand}</div>
                 <h1 className={styles.productName}>{product.name}</h1>
-                <p className={styles.articleNumber}>SKU: {product.articleNumber}</p>
+                <p className={styles.articleNumber}>Артикул: {product.articleNumber}</p>
 
                 <div className={styles.priceSection}>
                   <div className={styles.price}>{formatPrice(product.price)}</div>
                   <div className={`${styles.stock} ${product.inStock ? styles.inStock : styles.outOfStock}`}>
-                    {product.inStock ? '✓ In Stock' : '✗ Out of Stock'}
+                    {product.inStock ? (
+                      <>
+                        <Check size={16} />
+                        <span>В наличии</span>
+                      </>
+                    ) : (
+                      <>
+                        <X size={16} />
+                        <span>Нет в наличии</span>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -125,43 +135,43 @@ export default function ProductDetailPage() {
                   className={styles.addToCartButton}
                 >
                   <ShoppingCart size={20} />
-                  <span>Add to Cart</span>
+                  <span>Добавить в корзину</span>
                 </Button>
 
                 <div className={styles.specs}>
                   <h3 className={styles.specsTitle}>
                     <Info size={20} />
-                    Specifications
+                    Характеристики
                   </h3>
                   <dl className={styles.specsList}>
                     <div className={styles.specItem}>
-                      <dt>Dimensions (WxHxD)</dt>
-                      <dd>{product.specifications.dimensions} cm</dd>
+                      <dt>Размеры (ШxВxГ)</dt>
+                      <dd>{product.specifications.dimensions} см</dd>
                     </div>
                     {product.specifications.volume && (
                       <div className={styles.specItem}>
-                        <dt>Volume</dt>
+                        <dt>Объем</dt>
                         <dd>{product.specifications.volume}</dd>
                       </div>
                     )}
                     {product.specifications.diagonal && (
                       <div className={styles.specItem}>
-                        <dt>Diagonal</dt>
+                        <dt>Диагональ</dt>
                         <dd>{product.specifications.diagonal}</dd>
                       </div>
                     )}
                     {product.specifications.capacity && (
                       <div className={styles.specItem}>
-                        <dt>Capacity</dt>
+                        <dt>Вместимость</dt>
                         <dd>{product.specifications.capacity}</dd>
                       </div>
                     )}
                     <div className={styles.specItem}>
-                      <dt>Energy Class</dt>
+                      <dt>Класс энергопотребления</dt>
                       <dd>{product.specifications.energyClass}</dd>
                     </div>
                     <div className={styles.specItem}>
-                      <dt>Color</dt>
+                      <dt>Цвет</dt>
                       <dd>{product.specifications.color}</dd>
                     </div>
                   </dl>

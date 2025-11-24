@@ -1,12 +1,12 @@
-export type ProductCategory = 'Refrigerators' | 'TVs' | 'Washing Machines';
+export type ProductCategory = 'Холодильники' | 'Телевизоры' | 'Стиральные машины';
 
 export type ProductBrand = 'Samsung' | 'LG' | 'Bosch';
 
 export interface ProductSpecifications {
-  dimensions: string; // "WxHxD cm"
-  volume?: string; // For refrigerators
-  diagonal?: string; // For TVs
-  capacity?: string; // For washing machines
+  dimensions: string; // "ШxВxГ см"
+  volume?: string; // Для холодильников
+  diagonal?: string; // Для телевизоров
+  capacity?: string; // Для стиральных машин
   energyClass: string;
   color: string;
 }
@@ -16,11 +16,11 @@ export interface Product {
   name: string;
   brand: ProductBrand;
   category: ProductCategory;
-  price: number; // Price in rubles
+  price: number; // Цена в рублях
   inStock: boolean;
-  modelPath: string; // Path to GLB file
-  usdzPath: string; // Path to USDZ file for iOS
-  posterPath: string; // Path to poster image
+  modelPath: string; // Путь к GLB файлу
+  usdzPath: string; // Путь к USDZ файлу для iOS
+  posterPath: string; // Путь к изображению
   specifications: ProductSpecifications;
   articleNumber: string;
 }

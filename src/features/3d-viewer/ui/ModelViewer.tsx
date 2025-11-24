@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { AlertCircle } from 'lucide-react';
 import '@google/model-viewer';
 import styles from './ModelViewer.module.css';
 
@@ -19,7 +20,7 @@ export function ModelViewer({
   modelPath,
   usdzPath,
   posterPath,
-  alt = '3D Model',
+  alt = '3D модель',
   enableAR = false,
   autoRotate = true,
   onLoad,
@@ -39,7 +40,7 @@ export function ModelViewer({
     };
 
     const handleError = (event: Event) => {
-      const errorMessage = 'Failed to load 3D model';
+      const errorMessage = 'Не удалось загрузить 3D модель';
       setError(errorMessage);
       setIsLoading(false);
       onError?.(new Error(errorMessage));
@@ -59,14 +60,17 @@ export function ModelViewer({
       {isLoading && (
         <div className={styles.loader}>
           <div className={styles.spinner}></div>
-          <p>Loading 3D Model...</p>
+          <p>Загрузка 3D модели...</p>
         </div>
       )}
 
       {error && (
         <div className={styles.error}>
-          <p>❌ {error}</p>
-          <p className={styles.errorHint}>Using placeholder model</p>
+          <div className={styles.errorMessage}>
+            <AlertCircle size={20} />
+            <p>{error}</p>
+          </div>
+          <p className={styles.errorHint}>Используется заглушка</p>
         </div>
       )}
 

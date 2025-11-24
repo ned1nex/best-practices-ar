@@ -17,19 +17,19 @@ export function ShareButton({ productId, productName }: ShareButtonProps) {
 
     if (result.success) {
       if (result.method === 'native') {
-        toast.success('Product shared successfully!');
+        toast.success('Товар успешно отправлен!');
       } else if (result.method === 'clipboard') {
-        toast.success('Link copied to clipboard!');
+        toast.success('Ссылка скопирована!');
       }
     } else {
-      toast.error('Failed to share product');
+      toast.error('Не удалось поделиться товаром');
     }
   };
 
   return (
     <Button variant="outline" onClick={handleShare}>
       <Share2 size={20} />
-      <span>Share</span>
+      <span>Поделиться</span>
     </Button>
   );
 }

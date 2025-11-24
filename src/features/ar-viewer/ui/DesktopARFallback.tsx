@@ -18,16 +18,16 @@ export function DesktopARFallback({ productId, productName }: DesktopARFallbackP
   const productUrl = generateShareLink(productId);
 
   const handleCopy = () => {
-    toast.success('Link copied to clipboard!');
+    toast.success('Ссылка скопирована!');
   };
 
   return (
     <Card ornate className={styles.fallback}>
       <div className={styles.content}>
         <Smartphone size={48} className={styles.icon} />
-        <h3 className={styles.title}>Open on Smartphone for AR</h3>
+        <h3 className={styles.title}>Откройте на смартфоне для AR</h3>
         <p className={styles.description}>
-          Scan QR code or copy link to open product on mobile device
+          Отсканируйте QR-код или скопируйте ссылку для открытия на мобильном устройстве
         </p>
 
         <div className={styles.qrContainer}>
@@ -46,12 +46,12 @@ export function DesktopARFallback({ productId, productName }: DesktopARFallbackP
         <CopyToClipboard text={productUrl} onCopy={handleCopy}>
           <Button variant="secondary" fullWidth className={styles.copyButton}>
             <Copy size={20} />
-            <span>Copy Link</span>
+            <span>Копировать ссылку</span>
           </Button>
         </CopyToClipboard>
 
         <p className={styles.hint}>
-          Supports iOS (ARKit) and Android (ARCore)
+          Поддерживает iOS (ARKit) и Android (ARCore)
         </p>
       </div>
     </Card>

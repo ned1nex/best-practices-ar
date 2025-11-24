@@ -28,7 +28,7 @@ export function ARButton({ onClick, disabled }: ARButtonProps) {
       className={styles.arButton}
     >
       <Smartphone size={24} />
-      <span>View in My Space</span>
+      <span>Посмотреть в моем пространстве</span>
     </Button>
   );
 }

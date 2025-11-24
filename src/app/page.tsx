@@ -11,6 +11,9 @@ export default function CatalogPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
+        <div className={styles.headerBackground}>
+          <div className={styles.gradientBlur}></div>
+        </div>
         <Container>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -19,11 +22,12 @@ export default function CatalogPage() {
             className={styles.headerContent}
           >
             <div className={styles.logoContainer}>
-              <h1 className={styles.logo}>M.Video</h1>
-              <span className={styles.arBadge}>AR Experience</span>
+            <span className={styles.arBadge}>AR Experience</span>
+              <h1 className={styles.logo}>M.VIDEO</h1>
+
             </div>
             <p className={styles.tagline}>
-              Experience home appliances in your space with augmented reality
+              Рассмотрите бытовую технику в вашем пространстве с дополненной реальностью
             </p>
           </motion.div>
         </Container>
@@ -38,9 +42,9 @@ export default function CatalogPage() {
             className={styles.catalog}
           >
             <div className={styles.catalogHeader}>
-              <h2 className={styles.title}>Product Catalog</h2>
+              <h2 className={styles.title}> Каталог <span className={styles.red_text}>товаров</span> </h2>
               <p className={styles.subtitle}>
-                Select a product to view in 3D and AR
+                Выберите товар для просмотра в 3D и AR
               </p>
             </div>
 
@@ -63,15 +67,6 @@ export default function CatalogPage() {
           </motion.section>
         </Container>
       </main>
-
-      <footer className={styles.footer}>
-        <Container>
-          <div className={styles.footerContent}>
-            <p>© 2025 M.Video AR Experience</p>
-            <p>Educational Project</p>
-          </div>
-        </Container>
-      </footer>
     </div>
   );
 }

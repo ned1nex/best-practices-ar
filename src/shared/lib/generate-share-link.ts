@@ -28,7 +28,7 @@ export async function shareProduct(
     try {
       await navigator.share({
         title: productName,
-        text: `Check out ${productName} on M.Video`,
+        text: `Посмотрите ${productName} на М.Видео`,
         url: url,
       });
       return { success: true, method: 'native' };

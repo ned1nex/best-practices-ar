@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* M.Video Brand Colors - Brutal Dark Theme */
@@ -38,7 +38,7 @@
   --radius-lg: 6px;
 
   /* Typography */
-  --font-heading: 'Bebas Neue', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Transitions */
@@ -74,7 +74,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0.02em;
   text-transform: uppercase;

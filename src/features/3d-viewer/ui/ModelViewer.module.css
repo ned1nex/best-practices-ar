@@ -63,16 +63,28 @@
   z-index: 5;
 }
 
-.error p {
+.errorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-primary-red);
+  margin-bottom: 0.5rem;
+}
+
+.errorMessage p {
   font-family: var(--font-body);
   font-size: 0.875rem;
+  font-weight: 600;
   color: var(--foreground);
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 .errorHint {
+  font-family: var(--font-body);
   font-size: 0.75rem;
   color: var(--color-muted);
+  margin: 0;
 }
 
 /* Mobile responsive */
