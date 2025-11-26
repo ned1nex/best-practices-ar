@@ -26,8 +26,8 @@ export const products: Product[] = [
     category: 'Холодильники',
     price: 179990,
     inStock: true,
-    modelPath: '/models/samsung-fridge.glb',
-    usdzPath: '/models/samsung-fridge.usdz',
+    modelPath: '/models/refreg.glb',
+    usdzPath: '/models/refreg.usdz',
     posterPath: '/posters/samsung-fridge.png',
     articleNumber: 'RF65A967FB1/WT',
     specifications: {
