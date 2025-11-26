@@ -44,8 +44,8 @@ export const products: Product[] = [
     category: 'Стиральные машины',
     price: 54990,
     inStock: true,
-    modelPath: '/models/bosh.glb',
-    usdzPath: '/models/bosch.usdz',
+    modelPath: '/models/washing-machine.glb',
+    usdzPath: '/models/washing-machine.usdz',
     posterPath: '/posters/boss.jpg',
     articleNumber: 'WAN24140OE',
     specifications: {
